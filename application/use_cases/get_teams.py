@@ -1,7 +1,7 @@
 from typing import List
-from app.domain.value_objects import CompetitionType
-from app.domain.interfaces.services import TeamService
-from app.application.dto.response import TeamResponse
+from domain.value_objects import CompetitionType
+from domain.interfaces.services import TeamService
+from application.dto.response import TeamResponse
 
 
 class GetTeamsUseCase:

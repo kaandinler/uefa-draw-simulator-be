@@ -1,7 +1,7 @@
 from typing import List, Optional, Dict
-from app.domain.entities import Team, Draw, Fixture
-from app.domain.value_objects import CompetitionType
-from app.domain.interfaces.repositories import TeamRepository, DrawRepository, FixtureRepository
+from domain.entities import Team, Draw
+from domain.value_objects import CompetitionType
+from domain.interfaces.repositories import TeamRepository, DrawRepository
 
 
 class InMemoryTeamRepository(TeamRepository):

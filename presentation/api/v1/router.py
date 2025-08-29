@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from app.presentation.api.v1.endpoints import teams, draw, health
+from presentation.api.v1.endpoints import teams, draw, health
 
 api_router = APIRouter()
 

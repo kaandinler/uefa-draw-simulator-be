@@ -1,7 +1,7 @@
 # Error handling middleware
 from fastapi import FastAPI, Request, status
 from fastapi.responses import JSONResponse
-from app.core.exceptions import (
+from core.exceptions import (
     DomainException,
     ResourceNotFoundException,
     ValidationException,

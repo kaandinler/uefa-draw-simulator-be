@@ -44,6 +44,10 @@ class Settings(BaseSettings):
     UEFA_API_BASE_URL: str
     UEFA_API_KEY: Optional[str] = None
 
+    # Football Data API
+    FOOTBALL_DATA_API_URL: Optional[str] = None
+    FOOTBALL_DATA_API_KEY: Optional[str] = None
+
     # Logging - Bu değerler .env dosyasından okunacak
     LOG_LEVEL: str
     LOG_FORMAT: str = "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

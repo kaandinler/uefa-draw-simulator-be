@@ -1,9 +1,9 @@
-from typing import List
-from app.domain.entities import Team, Draw
-from app.domain.value_objects import CompetitionType
-from app.domain.interfaces.services import DrawService
-from app.application.dto.request import DrawRequest
-from app.application.dto.response import DrawResponse, TeamDrawResult, TeamResponse, FixtureResponse
+from datetime import datetime
+from domain.entities import Team
+from domain.value_objects import CompetitionType
+from domain.interfaces.services import DrawService
+from application.dto.request import DrawRequest
+from application.dto.response import DrawResponse, TeamDrawResult, TeamResponse, FixtureResponse
 
 
 class PerformDrawUseCase:

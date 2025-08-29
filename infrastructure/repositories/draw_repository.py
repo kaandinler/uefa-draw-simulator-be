@@ -2,11 +2,11 @@ from typing import Optional
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, desc
 from sqlalchemy.orm import selectinload
-from app.domain.entities import Draw
-from app.domain.value_objects import CompetitionType
-from app.domain.interfaces.repositories import DrawRepository
-from app.infrastructure.database.models import DrawModel
-from app.infrastructure.repositories.mappers import DrawMapper
+from domain.entities import Draw
+from domain.value_objects import CompetitionType
+from domain.interfaces.repositories import DrawRepository
+from infrastructure.database.models import DrawModel
+from infrastructure.repositories.mappers import DrawMapper
 
 
 class DrawRepositoryImpl(DrawRepository):

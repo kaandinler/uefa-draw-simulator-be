@@ -1,6 +1,6 @@
 from typing import List, Tuple
-from app.domain.entities import Team, Fixture
-from app.domain.interfaces.services import ValidationService
+from domain.entities import Team, Fixture
+from domain.interfaces.services import ValidationService
 
 
 class ValidationServiceImpl(ValidationService):

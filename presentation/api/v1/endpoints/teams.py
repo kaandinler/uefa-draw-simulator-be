@@ -1,10 +1,10 @@
 # Teams endpoints
 from typing import List, Annotated
 from fastapi import APIRouter, Depends, HTTPException, status
-from app.application.dto.response import TeamResponse, ErrorResponse
-from app.application.use_cases import GetTeamsUseCase
-from app.core.dependencies import get_teams_use_case
-from app.core.exceptions import ResourceNotFoundException
+from application.dto.response import TeamResponse
+from application.use_cases import GetTeamsUseCase
+from core.dependencies import get_teams_use_case
+from core.exceptions import ResourceNotFoundException
 
 router = APIRouter(prefix="/teams", tags=["teams"])
 

@@ -1,5 +1,5 @@
-from app.domain.entities import Team, Draw, Fixture
-from app.infrastructure.database.models import TeamModel, DrawModel, FixtureModel
+from domain.entities import Team, Draw, Fixture
+from infrastructure.database.models import TeamModel, DrawModel, FixtureModel
 
 
 class TeamMapper:

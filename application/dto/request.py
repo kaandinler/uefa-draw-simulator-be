@@ -1,6 +1,5 @@
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, field_validator
 from typing import List, Optional
-from datetime import datetime
 
 
 class TeamRequest(BaseModel):
@@ -11,7 +10,8 @@ class TeamRequest(BaseModel):
     coefficient: float = Field(..., ge=0)
     logo_url: Optional[str] = None
 
-    @validator('country')
+    @field_validator('country')
+    @classmethod
     def country_uppercase(cls, v):
         return v.upper()
 
@@ -29,11 +29,12 @@ class TeamRequest(BaseModel):
 
 
 class DrawRequest(BaseModel):
-    competition: str = Field(..., regex="^(champions_league|europa_league|conference_league)$")
-    season: str = Field(..., regex="^\\d{4}/\\d{2}$")
-    teams: List[TeamRequest] = Field(..., min_items=36, max_items=36)
+    competition: str = Field(..., pattern="^(champions_league|europa_league|conference_league)$")
+    season: str = Field(..., pattern="^\\d{4}/\\d{2}$")
+    teams: List[TeamRequest] = Field(..., min_length=36, max_length=36)
 
-    @validator('teams')
+    @field_validator('teams')
+    @classmethod
     def validate_pot_distribution(cls, teams):
         pot_counts = {1: 0, 2: 0, 3: 0, 4: 0}
         for team in teams:

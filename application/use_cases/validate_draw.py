@@ -1,6 +1,6 @@
-from app.domain.interfaces.repositories import DrawRepository
-from app.domain.interfaces.services import DrawService
-from app.application.dto.response import ValidationResponse
+from domain.interfaces.repositories import DrawRepository
+from domain.interfaces.services import DrawService
+from application.dto.response import ValidationResponse
 
 
 class ValidateDrawUseCase:

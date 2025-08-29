@@ -1,16 +1,16 @@
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
-from app.core.config import settings
-from app.core.dependencies import db_connection
-from app.core.logging import setup_logging
-from app.presentation.api.v1.router import api_router
-from app.presentation.middleware.cors import setup_cors
-from app.presentation.middleware.error_handler import setup_exception_handlers
-from app.presentation.middleware.logging import setup_logging_middleware
-from app.infrastructure.repositories.in_memory_repository import (
+from core.config import settings
+from core.dependencies import db_connection
+from core.logging import setup_logging
+from presentation.api.v1.router import api_router
+from presentation.middleware.cors import setup_cors
+from presentation.middleware.error_handler import setup_exception_handlers
+from presentation.middleware.logging import setup_logging_middleware
+from infrastructure.repositories.in_memory_repository import (
     InMemoryTeamRepository
 )
-from app.domain.entities import Team
+from domain.entities import Team
 from loguru import logger
 
 # Sample teams data
@@ -103,7 +103,7 @@ if __name__ == "__main__":
     import uvicorn
 
     uvicorn.run(
-        "app.main:app",
+        "main:app",
         host="0.0.0.0",
         port=8000,
         reload=settings.DEBUG,

@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import List, Dict, Set
+from typing import List, Optional
 from datetime import datetime
 from .team import Team
 from .fixture import Fixture

@@ -1,11 +1,11 @@
 # Draw business logic
 
 import random
-from typing import List, Dict, Set, Tuple, Optional
-from app.domain.entities import Team, Draw, Fixture
-from app.domain.value_objects import CompetitionType
-from app.domain.interfaces.services import DrawService, ValidationService
-from app.domain.interfaces.repositories import DrawRepository, TeamRepository, FixtureRepository
+from typing import List, Dict, Set, Tuple
+from domain.entities import Team, Draw, Fixture
+from domain.value_objects import CompetitionType
+from domain.interfaces.services import DrawService, ValidationService
+from domain.interfaces.repositories import DrawRepository, TeamRepository, FixtureRepository
 
 
 class DrawServiceImpl(DrawService):

@@ -1,11 +1,11 @@
 from typing import List, Optional
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, delete
-from app.domain.entities import Team
-from app.domain.value_objects import CompetitionType
-from app.domain.interfaces.repositories import TeamRepository
-from app.infrastructure.database.models import TeamModel
-from app.infrastructure.repositories.mappers import TeamMapper
+from domain.entities import Team
+from domain.value_objects import CompetitionType
+from domain.interfaces.repositories import TeamRepository
+from infrastructure.database.models import TeamModel
+from infrastructure.repositories.mappers import TeamMapper
 
 
 class TeamRepositoryImpl(TeamRepository):

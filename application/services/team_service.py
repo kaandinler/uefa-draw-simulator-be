@@ -1,10 +1,10 @@
 # Team business logic
 
 from typing import List, Dict
-from app.domain.entities import Team
-from app.domain.value_objects import CompetitionType
-from app.domain.interfaces.services import TeamService
-from app.domain.interfaces.repositories import TeamRepository
+from domain.entities import Team
+from domain.value_objects import CompetitionType
+from domain.interfaces.services import TeamService
+from domain.interfaces.repositories import TeamRepository
 
 
 class TeamServiceImpl(TeamService):

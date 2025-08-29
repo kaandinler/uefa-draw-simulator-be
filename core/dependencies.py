@@ -3,19 +3,19 @@
 from typing import AsyncGenerator, Annotated
 from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.infrastructure.database.connection import DatabaseConnection
-from app.infrastructure.repositories.team_repository import TeamRepositoryImpl
-from app.infrastructure.repositories.draw_repository import DrawRepositoryImpl
-from app.infrastructure.repositories.in_memory_repository import (
+from infrastructure.database.connection import DatabaseConnection
+from infrastructure.repositories.team_repository import TeamRepositoryImpl
+from infrastructure.repositories.draw_repository import DrawRepositoryImpl
+from infrastructure.repositories.in_memory_repository import (
     InMemoryTeamRepository, InMemoryDrawRepository
 )
-from app.application.services import (
+from application.services import (
     DrawServiceImpl, TeamServiceImpl, ValidationServiceImpl
 )
-from app.application.use_cases import (
+from application.use_cases import (
     PerformDrawUseCase, ValidateDrawUseCase, GetTeamsUseCase
 )
-from app.core.config import settings
+from core.config import settings
 
 # Database connection instance
 db_connection = DatabaseConnection(settings.DATABASE_URL)

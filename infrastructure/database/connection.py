@@ -1,7 +1,7 @@
 from typing import AsyncGenerator
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine, async_sessionmaker
 from sqlalchemy.orm import declarative_base
-from app.core.config import settings
+from core.config import settings
 
 Base = declarative_base()
 
@@ -11,13 +11,23 @@ class DatabaseConnection:
 
     def __init__(self, database_url: str = None):
         self.database_url = database_url or settings.DATABASE_URL
-        self.engine = create_async_engine(
-            self.database_url,
-            echo=settings.DEBUG,
-            pool_pre_ping=True,
-            pool_size=5,
-            max_overflow=10
-        )
+
+        # SQLite için farklı konfigürasyon
+        if self.database_url.startswith('sqlite'):
+            self.engine = create_async_engine(
+                self.database_url,
+                echo=settings.DEBUG,
+            )
+        else:
+            # PostgreSQL/MySQL için pool ayarları
+            self.engine = create_async_engine(
+                self.database_url,
+                echo=settings.DEBUG,
+                pool_pre_ping=True,
+                pool_size=5,
+                max_overflow=10
+            )
+
         self.async_session = async_sessionmaker(
             self.engine,
             class_=AsyncSession,
